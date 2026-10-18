@@ -1,0 +1,10 @@
+openai
+pandas
+pydantic
+datasets
+python-dotenv
+pytest
+mlflow
+fastapi
+uvicorn[standard]
+mlflow

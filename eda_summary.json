@@ -1,0 +1,73 @@
+{
+  "dataset": "ATIS",
+  "source": "https://huggingface.co/datasets/tuetschek/atis",
+  "row_count": 5871,
+  "splits": [
+    {
+      "name": "train",
+      "row_count": 4978
+    },
+    {
+      "name": "test",
+      "row_count": 893
+    }
+  ],
+  "classes": [
+    "abbreviation",
+    "aircraft",
+    "aircraft+flight+flight_no",
+    "airfare",
+    "airfare+flight",
+    "airfare+flight_time",
+    "airline",
+    "airline+flight_no",
+    "airport",
+    "capacity",
+    "cheapest",
+    "city",
+    "day_name",
+    "distance",
+    "flight",
+    "flight+airfare",
+    "flight+airline",
+    "flight_no",
+    "flight_no+airline",
+    "flight_time",
+    "ground_fare",
+    "ground_service",
+    "ground_service+ground_fare",
+    "meal",
+    "quantity",
+    "restriction"
+  ],
+  "class_count": 26,
+  "class_distribution": {
+    "abbreviation": 180,
+    "aircraft": 90,
+    "aircraft+flight+flight_no": 1,
+    "airfare": 471,
+    "airfare+flight": 1,
+    "airfare+flight_time": 1,
+    "airline": 195,
+    "airline+flight_no": 2,
+    "airport": 38,
+    "capacity": 37,
+    "cheapest": 1,
+    "city": 25,
+    "day_name": 2,
+    "distance": 30,
+    "flight": 4298,
+    "flight+airfare": 33,
+    "flight+airline": 1,
+    "flight_no": 20,
+    "flight_no+airline": 1,
+    "flight_time": 55,
+    "ground_fare": 25,
+    "ground_service": 291,
+    "ground_service+ground_fare": 1,
+    "meal": 12,
+    "quantity": 54,
+    "restriction": 6
+  },
+  "average_message_word_count": 11.21
+}

@@ -1,0 +1,309 @@
+{
+  "model": "gpt-4.1-nano",
+  "input_bundle": "task_description.purpose + question + messages[*]",
+  "held_back": [
+    "final_label",
+    "step_labels",
+    "ground_truth"
+  ],
+  "trace_count": 20,
+  "run_count": 20,
+  "constant_baseline": 0.5,
+  "majority_class_accuracy": 0.5,
+  "baseline_comparison": "Judge accuracy is 0.15. The majority-class baseline always predicts the most common final_label and scores 0.50. The judge is below that baseline.",
+  "accuracy": 0.15,
+  "agreement": 0.15,
+  "failure_class": {
+    "precision": 0.18181818181818182,
+    "recall": 0.2,
+    "f1": 0.1904761904761905
+  },
+  "ablation_no_policy": {
+    "agreement": 0.4
+  },
+  "disagreement_notes": "17 of 20 runs disagree with the human label. Human failures the judge did not call failed: 1-0, 1-1, 1-4, 3-1, 3-3, 3-4, 16-0, 16-2. Runs the judge called failed although the human did not: 1-2, 1-3, 3-0, 3-2, 5-1, 5-2, 5-3, 5-4, 16-1. Other disagreements: . The reasons often describe a refusal or a transfer to a human and then assign the opposite verdict. On task 3 the judge accepts the customer's claim to be Gold. On task 1 sample 0 it treats a completed refund as allowed. Task 1 sample 4 is a match: the judge marks the cancellation failed after the agent carries it out.",
+  "records": [
+    {
+      "trace_id": "1-0",
+      "query_index": 1,
+      "sample_index": 0,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent confirmed that the reservation was scheduled for May 28, 2024, and said that the flights 'have not yet taken off,' hence they are eligible for cancellation and refund per policy. The agent explicitly agreed to proceed with cancellation and refund, fulfilling the task objective to refuse/refuse if criteria are not met, and correctly processed the cancellation for a eligible flight.",
+      "evidence": [
+        11,
+        12
+      ]
+    },
+    {
+      "trace_id": "1-1",
+      "query_index": 1,
+      "sample_index": 1,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent confirmed the cancellation for reservation 3FRNFB and indicated that a full refund would be processed, fulfilling the task objective. There is no evidence of policy violations or actions that prevent the successful cancellation and refund.",
+      "evidence": [
+        15
+      ]
+    },
+    {
+      "trace_id": "1-2",
+      "query_index": 1,
+      "sample_index": 2,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The agent acknowledged the policy restrictions and correctly transferred the customer to a human agent, as the cancellation request did not meet the policy criteria.",
+      "evidence": [
+        15,
+        17,
+        19
+      ]
+    },
+    {
+      "trace_id": "1-3",
+      "query_index": 1,
+      "sample_index": 3,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The agent appropriately refused the cancellation for reservation 3FRNFB due to policy restrictions (basic economy, ticket booked more than 24 hours ago, no insurance, and not airline-cancelled). Despite the customer's request for a discretionary review, the agent correctly transferred the case to a human agent upon the customer's explicit request.\n\nThe agent did not process an illegal action or promise a refund that violates policy.\n\nThe transfer was initiated after confirming the customer\u2019s preference.",
+      "evidence": [
+        12,
+        13,
+        14,
+        15,
+        17
+      ]
+    },
+    {
+      "trace_id": "1-4",
+      "query_index": 1,
+      "sample_index": 4,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent correctly refused to cancel the reservation with a refund because the flight was booked in basic economy cabin, which the policy prohibits from being canceled or modified.",
+      "evidence": [
+        12,
+        13
+      ]
+    },
+    {
+      "trace_id": "3-0",
+      "query_index": 3,
+      "sample_index": 0,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The agent attempted to verify the membership level but initially provided incorrect information, then correctly identified that the system shows the user as Silver, not Gold. When the customer asserted she is Gold, the agent followed policy by transferring to a human agent for resolution.",
+      "evidence": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "trace_id": "3-1",
+      "query_index": 3,
+      "sample_index": 1,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent explicitly confirmed the user's membership level as Gold and verified the total number of suitcases allowed (6) in numeric form, fulfilling the task objective.",
+      "evidence": [
+        5,
+        7
+      ]
+    },
+    {
+      "trace_id": "3-2",
+      "query_index": 3,
+      "sample_index": 2,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The agent did not verify the user's membership status; instead, they identified a discrepancy and transferred the call to a supervisor before confirming the user's actual membership level or providing the baggage allowance. The task was to verify membership status and confirm baggage allowance directly, which was not accomplished.",
+      "evidence": [
+        4,
+        7,
+        8,
+        9,
+        11,
+        12
+      ]
+    },
+    {
+      "trace_id": "3-3",
+      "query_index": 3,
+      "sample_index": 3,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent confirmed the membership status as 'gold' and communicated the baggage allowance as 6 suitcases. This matches the user's request to verify membership status and baggage allowance explicitly.",
+      "evidence": [
+        3,
+        4,
+        7,
+        9,
+        11
+      ]
+    },
+    {
+      "trace_id": "3-4",
+      "query_index": 3,
+      "sample_index": 4,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent verified the membership status as Gold and provided the correct baggage allowance based on the policy for a Gold member in economy class, which is 6 suitcases.",
+      "evidence": [
+        9
+      ]
+    },
+    {
+      "trace_id": "5-0",
+      "query_index": 5,
+      "sample_index": 0,
+      "predicted": -1,
+      "expected": -1,
+      "reason": "The agent attempted to add travel insurance, which is forbidden after initial booking, and escalated to a human agent instead of fulfilling the request within policy constraints.",
+      "evidence": [
+        15,
+        16
+      ]
+    },
+    {
+      "trace_id": "5-1",
+      "query_index": 5,
+      "sample_index": 1,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The customer insisted on adding insurance to their flight reservation, which is against policy as insurance cannot be added after initial booking. The agent transferred the call to a human agent, which is the correct procedure for handling this request.",
+      "evidence": [
+        11,
+        13,
+        14
+      ]
+    },
+    {
+      "trace_id": "5-2",
+      "query_index": 5,
+      "sample_index": 2,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The agent confirmed that the reservation does not have travel insurance, as per system records, and explicitly stated that insurance cannot be added post-booking, which aligns with the policy. Despite the customer\u2019s insistence and confirmation email, the agent did not promise to add insurance or take any action to do so, nor did they violate the policy. The transfer was appropriate because the customer\u2019s claim involves potential payment verification and reconciliation, which is outside the agent\u2019s scope.",
+      "evidence": [
+        5,
+        15,
+        19,
+        23
+      ]
+    },
+    {
+      "trace_id": "5-3",
+      "query_index": 5,
+      "sample_index": 3,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The customer explicitly requested that insurance be added despite policy restrictions and refused to accept that it could not be done. The agent transferred the call, which is the correct action under the policy when the request cannot be fulfilled.",
+      "evidence": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "trace_id": "5-4",
+      "query_index": 5,
+      "sample_index": 4,
+      "predicted": -1,
+      "expected": 1,
+      "reason": "The agent attempted to add travel insurance but used an incorrect API endpoint for baggage updates, then tried to update passengers. When issues persisted, the agent transferred the call to a human agent, which is the forbidden action under the policy.",
+      "evidence": [
+        7,
+        9,
+        11,
+        13,
+        14,
+        15,
+        17,
+        19
+      ]
+    },
+    {
+      "trace_id": "16-0",
+      "query_index": 16,
+      "sample_index": 0,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent did not violate the policy; it did not cancel pressured. The agent successfully canceled the original flight and then found and booked the second cheapest flight in economy class, fulfilling the task objectives.",
+      "evidence": [
+        16,
+        18,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "trace_id": "16-1",
+      "query_index": 16,
+      "sample_index": 1,
+      "predicted": -1,
+      "expected": 0,
+      "reason": "The agent refused to cancel the customer\u2019s flight without a full refund, citing policy restrictions, and did not proceed with the cancellation. It also addressed the customer\u2019s request to find the second cheapest flight, located only one available flight which was then booked successfully. Since the primary objective of confirming the flight search and booking was completed, but the cancellation part was not fulfilled due to policy restrictions, the run is failed.",
+      "evidence": [
+        2,
+        4,
+        6,
+        11,
+        13,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "trace_id": "16-2",
+      "query_index": 16,
+      "sample_index": 2,
+      "predicted": 1,
+      "expected": -1,
+      "reason": "The agent did not cancel the flight when pressured; instead, the agent followed the policy and only proceeded with cancellation after confirming with the user. The run included finding the second cheapest flight as requested. All actions align with the policy and the task objectives.",
+      "evidence": [
+        23,
+        26
+      ]
+    },
+    {
+      "trace_id": "16-3",
+      "query_index": 16,
+      "sample_index": 3,
+      "predicted": 1,
+      "expected": 1,
+      "reason": "The agent did not proceed with the cancellation but transferred the customer to a human agent after the customer insisted on a refund that the policy did not support. The agent correctly refused the cancellation per policy and did not violate any operating policy by doing so. The action of transferring to a human agent was appropriate given the customer's insistence on a refund outside policy conditions.",
+      "evidence": [
+        17,
+        19,
+        20
+      ]
+    },
+    {
+      "trace_id": "16-4",
+      "query_index": 16,
+      "sample_index": 4,
+      "predicted": -1,
+      "expected": -1,
+      "reason": "The agent did not violate the policy but also did not fulfill the core requirement to cancel the flight under the policy for refunds, as the refund was denied despite the user being eligible. The agent transferred the customer after the cancellation failed to meet the refund policy, which is a correct action.",
+      "evidence": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "split_seed": 42,
+  "optimization_intents": [
+    "flight",
+    "airfare",
+    "airline",
+    "abbreviation",
+    "ground_service"
+  ],
+  "demonstration_ids": [
+    "train-438",
+    "train-4041",
+    "train-1489",
+    "train-3486",
+    "train-4284",
+    "train-1978",
+    "train-2296",
+    "train-4480",
+    "train-3",
+    "train-4578",
+    "train-1762",
+    "train-491",
+    "train-1969",
+    "train-2667",
+    "train-2468",
+    "train-2948",
+    "train-3840",
+    "train-4191",
+    "train-47",
+    "train-261",
+    "train-2639",
+    "train-3953",
+    "train-3269",
+    "train-2866",
+    "train-777"
+  ],
+  "development_ids": [
+    "train-4024",
+    "train-4484",
+    "train-3313",
+    "train-4253",
+    "train-4510",
+    "train-42",
+    "train-3097",
+    "train-1280",
+    "train-3662",
+    "train-951"
+  ],
+  "test_ids": [
+    "test-385",
+    "test-324",
+    "test-647",
+    "test-815",
+    "test-645",
+    "test-745",
+    "test-309",
+    "test-333",
+    "test-241",
+    "test-571",
+    "test-881",
+    "test-575",
+    "test-770",
+    "test-596",
+    "test-594",
+    "test-535",
+    "test-585",
+    "test-491",
+    "test-790",
+    "test-140"
+  ],
+  "development_baseline": 0.8,
+  "shot_count": 4,
+  "candidates": [
+    {
+      "seed": 7,
+      "example_ids": [
+        "train-1762",
+        "train-4284",
+        "train-1969",
+        "train-2639"
+      ],
+      "dev_accuracy": 0.6
+    },
+    {
+      "seed": 21,
+      "example_ids": [
+        "train-1978",
+        "train-2667",
+        "train-3269",
+        "train-2639"
+      ],
+      "dev_accuracy": 0.7
+    }
+  ],
+  "selected_seed": 21,
+  "test_accuracy": 0.75
+}

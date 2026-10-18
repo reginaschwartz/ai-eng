@@ -1,0 +1,79 @@
+{
+  "sample_size": 10,
+  "correct": 9,
+  "accuracy": 0.9,
+  "model": "gpt-4.1-nano",
+  "notes": "No few-shot examples.",
+  "predictions": [
+    {
+      "id": "train-0",
+      "text": "i want to fly from boston at 838 am and arrive in denver at 1110 in the morning",
+      "gold_intent": "flight",
+      "predicted_intent": "flight",
+      "correct": true
+    },
+    {
+      "id": "train-1",
+      "text": "what flights are available from pittsburgh to baltimore on thursday morning",
+      "gold_intent": "flight",
+      "predicted_intent": "flight",
+      "correct": true
+    },
+    {
+      "id": "train-2",
+      "text": "what is the arrival time in san francisco for the 755 am flight leaving washington",
+      "gold_intent": "flight_time",
+      "predicted_intent": "flight_time",
+      "correct": true
+    },
+    {
+      "id": "train-3",
+      "text": "cheapest airfare from tacoma to orlando",
+      "gold_intent": "airfare",
+      "predicted_intent": "cheapest",
+      "correct": false
+    },
+    {
+      "id": "train-4",
+      "text": "round trip fares from pittsburgh to philadelphia under 1000 dollars",
+      "gold_intent": "airfare",
+      "predicted_intent": "airfare",
+      "correct": true
+    },
+    {
+      "id": "train-5",
+      "text": "i need a flight tomorrow from columbus to minneapolis",
+      "gold_intent": "flight",
+      "predicted_intent": "flight",
+      "correct": true
+    },
+    {
+      "id": "train-6",
+      "text": "what kind of aircraft is used on a flight from cleveland to dallas",
+      "gold_intent": "aircraft",
+      "predicted_intent": "aircraft",
+      "correct": true
+    },
+    {
+      "id": "train-7",
+      "text": "show me the flights from pittsburgh to los angeles on thursday",
+      "gold_intent": "flight",
+      "predicted_intent": "flight",
+      "correct": true
+    },
+    {
+      "id": "train-8",
+      "text": "all flights from boston to washington",
+      "gold_intent": "flight",
+      "predicted_intent": "flight",
+      "correct": true
+    },
+    {
+      "id": "train-9",
+      "text": "what kind of ground transportation is available in denver",
+      "gold_intent": "ground_service",
+      "predicted_intent": "ground_service",
+      "correct": true
+    }
+  ]
+}

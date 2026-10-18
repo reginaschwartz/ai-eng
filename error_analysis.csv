@@ -1,0 +1,2 @@
+id,prediction,label,error_type,comments
+train-3,cheapest,airfare,label_boundary,"The utterance says 'cheapest airfare from tacoma to orlando'. The prompt treats cheapest as any lowest-fare request, so the model returned cheapest. In this dataset that wording is airfare; cheapest is the narrower 'cheapest fare in the database' case."
